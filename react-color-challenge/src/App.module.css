@@ -4,9 +4,13 @@
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  margin-top: 10vh
+  margin-top: 10vh;
+  width: 100%;
+  text-align: center;
+}
+
+.innerContainer {
+  margin-top: 2em
 }
 
 
