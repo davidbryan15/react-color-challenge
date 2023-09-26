@@ -6,35 +6,29 @@ A customer has delivered a requirements document with the following requirements
  - When clicked, the button shall alert the user of its color value. For example, a button with the color red shall alert, "My color is red."
  - There shall be a counter displaying how many times any button was clicked (not a specific button, but any button).
 
-  The code for the front end of this application is written below, but there are problems with the code. It is not maintainable, and it's only capable of displaying hardcoded colors -- not a random array of colors from an API.
+The code for the front end of this application is written below, but there are problems with the code. It is not maintainable, and it's only capable of displaying hardcoded colors -- not a random array of colors from an API.
 
-  Please refactor/fix the below code, making it as small and maintainable as possible. You can make any changes you'd like.
+Please refactor/fix the below code, making it as small and maintainable as possible. You can make any changes you'd like.
 
-  Read all comments in this file carefully. Seemingly unimportant details may reveal more optimal approaches.
-  Once you are finished, please email the improved code to magnus.bakke@gamechangesolar.com. After your response is submitted, we will have another meeting to go through your implementation. That is also your chance to point out any mistakes you may have made.
-  Note that this is not only an exercise in displaying knowledge of React, but more so an exercise in showing your ability to learn new concepts (your experience with React will be taken into consideration), your reasoning skills, ability to explain your thought process, and review code.
+Read all comments in this file carefully. Seemingly unimportant details may reveal more optimal approaches.
+Once you are finished, please email the improved code to magnus.bakke@gamechangesolar.com. After your response is submitted, we will have another meeting to go through your implementation. That is also your chance to point out any mistakes you may have made.
+Note that this is not only an exercise in displaying knowledge of React, but more so an exercise in showing your ability to learn new concepts (your experience with React will be taken into consideration), your reasoning skills, ability to explain your thought process, and review code.
 
-  Comments in the code are appreciated.
-
-
-// Considerations:
-// You do not know how many colors there will be.
-// You do not know which colors will be returned by the API.
-// You can assume that all colors returned will be unique.
-// The colors returned by the API can be any valid CSS color.
-// Examples of valid CSS colors: red, #FF0000, hsl(0, 100%, 50%), rgb(255, 0, 0)
-// When displaying the name of a color (e.g. "My color is red"), there is no need to translate between named and 
-// unnamed colors. For example, you do not need to translate "#FF0000" to "red"; "My color is #FF0000" is fine.
+Comments in the code are appreciated.
 
 
+Considerations:
+ - You do not know how many colors there will be.
+ - You do not know which colors will be returned by the API.
+ - You can assume that all colors returned will be unique.
+ - The colors returned by the API can be any valid CSS color.
+ - Examples of valid CSS colors: red, #FF0000, hsl(0, 100%, 50%), rgb(255, 0, 0)
+ - When displaying the name of a color (e.g. "My color is red"), there is no need to translate between named  and unnamed colors. For example, you do not need to translate "#FF0000" to "red"; "My color is #FF0000" is fine.
 
+Below is a stylesheet written in Sass. Sass is compiled to CSS. If you prefer, you may convert this to CSS.
+Pretend like this stylesheet is real, and that if you give an element the class name "button", it will be given a 1px thick, solid border. The other classes determine the color of that border.
 
-// Below is a stylesheet written in Sass. Sass is compiled to CSS. If you prefer, you may convert this to CSS.
-// Pretend like this stylesheet is real, and that if you give an element the class name "button", it will be given a
-// 1px thick, solid border. The other classes determine the color of that border.
-
-// Note that there are 16,777,216 possible colors, multiplied by 3 (hex, RGB, HSL), plus all named colors. You cannot
-// possibly include that many classes in this stylesheet.
+Note that there are 16,777,216 possible colors, multiplied by 3 (hex, RGB, HSL), plus all named colors. You cannot possibly include that many classes in this stylesheet.
 
 // .button
 //     border: 1px solid
@@ -51,11 +45,11 @@ A customer has delivered a requirements document with the following requirements
 // .green-background
 //     border-color: green
 
-// BONUS: Optimize this component using `React.memo`
+BONUS: Optimize this component using `React.memo`
 // const Button = () => {
 //   let colorClassName
 
-  // TODO: Support arbitrary number of colors
+  TODO: Support arbitrary number of colors
   // switch (props.color) {
   //     case "black":
   //         colorClassName = "black-background"
@@ -74,7 +68,7 @@ A customer has delivered a requirements document with the following requirements
   //         break
   // }
 
-  // BONUS: Make this button focusable for accessibility reasons
+  BONUS: Make this button focusable for accessibility reasons
   // return (
   //     <div className={"button " + colorClassName} onClick={props.clickCallback}>
   //         Click me to see my color's name.
@@ -104,10 +98,10 @@ A customer has delivered a requirements document with the following requirements
   //     setClickCount(clickCount + 1)
   // }
 
-  // TODO: Support any number of valid colors gotten from an API. We don't want to hardcode any color names.
-  //  If this list contains 100 colors, 100 buttons should be rendered. If it contains 2 colors, 2 should be rendered.
-  //  Uncomment this array of colors and treat it as if it came from an API. Pretend like you don't know the contents
-  //  of the array.
+TODO: Support any number of valid colors gotten from an API. We don't want to hardcode any color names.
+If this list contains 100 colors, 100 buttons should be rendered. If it contains 2 colors, 2 should be rendered.
+Uncomment this array of colors and treat it as if it came from an API. Pretend like you don't know the contents of the array.
+
   // const colors = ["black", "red", "green", "blue", "#2288AA", "rgb(255, 20, 25)"]
 
   // return (
