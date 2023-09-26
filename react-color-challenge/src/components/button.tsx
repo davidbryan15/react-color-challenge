@@ -1,15 +1,16 @@
 import React from 'react'
-import styles from "./button.module.css"
+import "./button.scss"
 
 export const Button: React.FC<{ color: string, addClick: () => void }> = ({ color, addClick }) => {
   return (
     <div
-      className={`${styles.btn}`}
+      className="btn"
       style={{ background: `${color}` }}
       onClick={() => {
-        addClick;
+        addClick();
         alert(`My color is ${color}`)
       }}>
       Click me to see my color's name.</div>
   )
 }
+
