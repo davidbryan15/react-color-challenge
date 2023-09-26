@@ -12,6 +12,7 @@ export const Button: React.FC<{ color: string, addClick: () => void }> = ({ colo
 
   return (
     <div
+      //@Todo - Create a dynamic way to change font color based on background color
       className="btn"
       style={{ background: `${color}` }}
       tabIndex={0}
